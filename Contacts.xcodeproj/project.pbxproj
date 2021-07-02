@@ -13,6 +13,10 @@
 		44FA72C9268F311600EB4361 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44FA72C7268F311600EB4361 /* Main.storyboard */; };
 		44FA72CB268F311600EB4361 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44FA72CA268F311600EB4361 /* Assets.xcassets */; };
 		44FA72CE268F311600EB4361 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44FA72CC268F311600EB4361 /* LaunchScreen.storyboard */; };
+		44FA72D6268F375F00EB4361 /* ContactsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FA72D5268F375F00EB4361 /* ContactsTableViewCell.swift */; };
+		44FA72D8268F487200EB4361 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FA72D7268F487200EB4361 /* DetailViewController.swift */; };
+		44FA72DA268F52F800EB4361 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FA72D9268F52F800EB4361 /* LoginViewController.swift */; };
+		44FA72DC268F904C00EB4361 /* AddDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FA72DB268F904C00EB4361 /* AddDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		44FA72CA268F311600EB4361 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		44FA72CD268F311600EB4361 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		44FA72CF268F311600EB4361 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		44FA72D5268F375F00EB4361 /* ContactsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewCell.swift; sourceTree = "<group>"; };
+		44FA72D7268F487200EB4361 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		44FA72D9268F52F800EB4361 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		44FA72DB268F904C00EB4361 /* AddDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +66,10 @@
 			children = (
 				44FA72C1268F311600EB4361 /* AppDelegate.swift */,
 				44FA72C3268F311600EB4361 /* SceneDelegate.swift */,
+				44FA72DB268F904C00EB4361 /* AddDetailViewController.swift */,
+				44FA72D9268F52F800EB4361 /* LoginViewController.swift */,
+				44FA72D7268F487200EB4361 /* DetailViewController.swift */,
+				44FA72D5268F375F00EB4361 /* ContactsTableViewCell.swift */,
 				44FA72C5268F311600EB4361 /* ViewController.swift */,
 				44FA72C7268F311600EB4361 /* Main.storyboard */,
 				44FA72CA268F311600EB4361 /* Assets.xcassets */,
@@ -137,7 +149,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44FA72DA268F52F800EB4361 /* LoginViewController.swift in Sources */,
+				44FA72D6268F375F00EB4361 /* ContactsTableViewCell.swift in Sources */,
 				44FA72C6268F311600EB4361 /* ViewController.swift in Sources */,
+				44FA72D8268F487200EB4361 /* DetailViewController.swift in Sources */,
+				44FA72DC268F904C00EB4361 /* AddDetailViewController.swift in Sources */,
 				44FA72C2268F311600EB4361 /* AppDelegate.swift in Sources */,
 				44FA72C4268F311600EB4361 /* SceneDelegate.swift in Sources */,
 			);
