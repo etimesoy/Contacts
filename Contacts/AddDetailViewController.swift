@@ -16,6 +16,7 @@ class AddDetailViewController: UIViewController {
     
     var contact: ContactsCellData?
     weak var delegate: DetailViewControllerDelegate?
+    var tableView: UITableView?
     
     override func viewDidLoad() {
         DetailViewController().viewDidLoad()
@@ -25,16 +26,16 @@ class AddDetailViewController: UIViewController {
         let nameSurname = nameSurnameLabel.text?.split(separator: " ")
         guard let name = nameSurname?[0], let surname = nameSurname?[1] else { return }
         
-        contact?.name = String(name)
-        contact?.surname = String(surname)
-        contact?.comment = commentTextView.text
-        contact?.phoneNumber = phoneNumberTextView.text ?? ""
-        contact?.placeOfWork = placeOfWorkTextView.text ?? ""
-        
-        if let contact = contact {
+        if var contact = contact {
+            contact.name = String(name)
+            contact.surname = String(surname)
+            contact.comment = commentTextView.text
+            contact.phoneNumber = phoneNumberTextView.text ?? ""
+            contact.placeOfWork = placeOfWorkTextView.text ?? ""
             delegate?.addNewDataOfContact(contact)
         }
         
+        tableView?.reloadData()
 //        navigationController?.popViewController(animated: true)
         dismiss(animated: true)
     }

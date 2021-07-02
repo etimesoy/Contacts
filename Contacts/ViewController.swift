@@ -35,7 +35,6 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.reloadData()
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -43,6 +42,9 @@ class ViewController: UIViewController {
     
     @IBAction func NewButtonAction(_ sender: Any) {
         guard let newContactViewController = storyboard?.instantiateViewController(withIdentifier: "AddDetailViewController") as? AddDetailViewController else { return }
+        
+        newContactViewController.tableView = tableView
+        
         present(newContactViewController, animated: true)
     }
     
@@ -60,6 +62,7 @@ extension ViewController: UITableViewDelegate {
         
         contactViewController.delegate = self
         contactViewController.contact = data[indexPath.row]
+        contactViewController.tableView = tableView
         
 //        navigationController?.pushViewController(contactViewController, animated: true)
         present(contactViewController, animated: true)
@@ -68,7 +71,6 @@ extension ViewController: UITableViewDelegate {
 
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//      tableView.reloadData()
         data.count
     }
     
@@ -89,16 +91,6 @@ extension ViewController: DetailViewControllerDelegate {
     func addNewDataOfContact(_ contact: ContactsCellData) {
         let lastId = data.last?.id ?? 0
         data.append(ContactsCellData(id: lastId + 1, name: contact.name, surname: contact.surname, placeOfWork: contact.placeOfWork, phoneNumber: contact.phoneNumber, comment: contact.comment))
-//        var newContact = contact
-//        newContact.id = lastId + 1
-
-//        let lastElementIndex = data.count - 1
-//        data[lastElementIndex].name = contact.name
-//        data[lastElementIndex].surname = contact.surname
-//        data[lastElementIndex].placeOfWork = contact.placeOfWork
-//        data[lastElementIndex].phoneNumber = contact.phoneNumber
-//        data[lastElementIndex].comment = contact.comment
-//        tableView.reloadData()
     }
 }
 
