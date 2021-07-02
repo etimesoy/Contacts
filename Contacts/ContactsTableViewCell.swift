@@ -10,6 +10,7 @@ import UIKit
 class ContactsTableViewCell: UITableViewCell {
     
     @IBOutlet weak var nameSurnameLabel: UILabel!
+    @IBOutlet weak var phoneNumberLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,6 +24,7 @@ class ContactsTableViewCell: UITableViewCell {
     
     func setData(contact: ContactsCellData) {
         nameSurnameLabel.text = contact.name + " " + contact.surname
+        phoneNumberLabel.text = contact.phoneNumber
     }
 
 }
