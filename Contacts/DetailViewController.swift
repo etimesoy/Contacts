@@ -42,7 +42,6 @@ class DetailViewController: UIViewController {
             delegate?.saveNewDataOfContact(contact)
         }
         
-        tableView?.reloadData()
 //        navigationController?.popViewController(animated: true)
         dismiss(animated: true)
     }

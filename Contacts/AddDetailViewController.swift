@@ -14,28 +14,21 @@ class AddDetailViewController: UIViewController {
     @IBOutlet weak var phoneNumberTextView: UITextField!
     @IBOutlet weak var commentTextView: UITextView!
     
-    var contact: ContactsCellData?
+    var countOfRows: Int?
     weak var delegate: DetailViewControllerDelegate?
     var tableView: UITableView?
     
     override func viewDidLoad() {
-        DetailViewController().viewDidLoad()
+        super.viewDidLoad()
     }
     
     @IBAction func saveButtonAction(_ sender: Any) {
         let nameSurname = nameSurnameLabel.text?.split(separator: " ")
         guard let name = nameSurname?[0], let surname = nameSurname?[1] else { return }
         
-        if var contact = contact {
-            contact.name = String(name)
-            contact.surname = String(surname)
-            contact.comment = commentTextView.text
-            contact.phoneNumber = phoneNumberTextView.text ?? ""
-            contact.placeOfWork = placeOfWorkTextView.text ?? ""
-            delegate?.addNewDataOfContact(contact)
-        }
+        let contact = ContactsCellData(id: countOfRows ?? 0 + 1, name: String(name), surname: String(surname), placeOfWork: placeOfWorkTextView.text ?? "", phoneNumber: phoneNumberTextView.text ?? "", comment: commentTextView.text)
+        delegate?.addNewDataOfContact(contact)
         
-        tableView?.reloadData()
 //        navigationController?.popViewController(animated: true)
         dismiss(animated: true)
     }

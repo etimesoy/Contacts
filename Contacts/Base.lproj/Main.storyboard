@@ -70,12 +70,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cX2-o2-jYW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-704" y="94"/>
+            <point key="canvasLocation" x="-835" y="94"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tA4-IR-Qcy">
             <objects>
-                <navigationController id="jhy-AQ-qDQ" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="UINavigationController" id="jhy-AQ-qDQ" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="sA2-JE-7eP">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -84,12 +84,12 @@
                         </textAttributes>
                     </navigationBar>
                     <connections>
-                        <segue destination="nEX-dt-mBn" kind="relationship" relationship="rootViewController" id="hUn-Ia-euV"/>
+                        <segue destination="nEX-dt-mBn" kind="relationship" relationship="rootViewController" id="cbf-Kx-guo"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P2U-ME-TE7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1451" y="94"/>
+            <point key="canvasLocation" x="-1603" y="94"/>
         </scene>
         <!--Contacts-->
         <scene sceneID="tne-QT-ifu">

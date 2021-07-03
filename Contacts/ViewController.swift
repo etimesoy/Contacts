@@ -43,6 +43,8 @@ class ViewController: UIViewController {
     @IBAction func NewButtonAction(_ sender: Any) {
         guard let newContactViewController = storyboard?.instantiateViewController(withIdentifier: "AddDetailViewController") as? AddDetailViewController else { return }
         
+        newContactViewController.delegate = self
+        newContactViewController.countOfRows = data.count
         newContactViewController.tableView = tableView
         
         present(newContactViewController, animated: true)
@@ -85,12 +87,14 @@ extension ViewController: DetailViewControllerDelegate {
     func saveNewDataOfContact(_ contact: ContactsCellData) {
         if let index = data.firstIndex(where: { $0.id == contact.id }) {
             data[index] = contact
+            tableView.reloadData()
         }
     }
 
     func addNewDataOfContact(_ contact: ContactsCellData) {
         let lastId = data.last?.id ?? 0
         data.append(ContactsCellData(id: lastId + 1, name: contact.name, surname: contact.surname, placeOfWork: contact.placeOfWork, phoneNumber: contact.phoneNumber, comment: contact.comment))
+        tableView.reloadData()
     }
 }
 
