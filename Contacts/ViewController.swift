@@ -45,7 +45,6 @@ class ViewController: UIViewController {
         
         newContactViewController.delegate = self
         newContactViewController.countOfRows = data.count
-        newContactViewController.tableView = tableView
         
         present(newContactViewController, animated: true)
     }
@@ -64,7 +63,6 @@ extension ViewController: UITableViewDelegate {
         
         contactViewController.delegate = self
         contactViewController.contact = data[indexPath.row]
-        contactViewController.tableView = tableView
         
 //        navigationController?.pushViewController(contactViewController, animated: true)
         present(contactViewController, animated: true)

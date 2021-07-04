@@ -21,7 +21,6 @@ class DetailViewController: UIViewController {
     
     var contact: ContactsCellData?
     weak var delegate: DetailViewControllerDelegate?
-    var tableView: UITableView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
