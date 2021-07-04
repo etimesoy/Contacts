@@ -32,12 +32,25 @@ class ViewController: UIViewController {
                                     ContactsCellData(id: 7, name: "James", surname: "Harden",
                                                      placeOfWork: "NBA Brooklyn", phoneNumber: "83333333333",
                                                      comment: "some comment")]
+    let dataArrayKey = "dataArrayKey"
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if let data = UserDefaults.standard.data(forKey: dataArrayKey) {
+            if let decoded = try? JSONDecoder().decode([ContactsCellData].self, from: data) {
+                self.data = decoded
+            }
+        }
+        
         tableView.delegate = self
         tableView.dataSource = self
+    }
+    
+    func save() {
+        if let encoded = try? JSONEncoder().encode(self.data) {
+            UserDefaults.standard.set(encoded, forKey: dataArrayKey)
+        }
     }
     
     @IBAction func NewButtonAction(_ sender: Any) {
@@ -85,6 +98,7 @@ extension ViewController: DetailViewControllerDelegate {
     func saveNewDataOfContact(_ contact: ContactsCellData) {
         if let index = data.firstIndex(where: { $0.id == contact.id }) {
             data[index] = contact
+            save()
             tableView.reloadData()
         }
     }
@@ -92,11 +106,12 @@ extension ViewController: DetailViewControllerDelegate {
     func addNewDataOfContact(_ contact: ContactsCellData) {
         let lastId = data.last?.id ?? 0
         data.append(ContactsCellData(id: lastId + 1, name: contact.name, surname: contact.surname, placeOfWork: contact.placeOfWork, phoneNumber: contact.phoneNumber, comment: contact.comment))
+        save()
         tableView.reloadData()
     }
 }
 
-struct ContactsCellData {
+struct ContactsCellData: Decodable, Encodable {
     let id: Int
     var name: String
     var surname: String
